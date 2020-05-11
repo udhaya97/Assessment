@@ -161,7 +161,7 @@
 	</target>
 
 	<!-- Create the final WAR file for deployment -->
-	<target name="package" depends="clean,copy-jars,junit ,compile,copy-resources" description="create a war file">
+	<target name="package" depends="clean,copy-jars,compile,copy-resources" description="create a war file">
 		<!-- ivy get dependencies and put it in ${lib.dir} -->
 		<ivy:retrieve pattern="${lib.dir}/[artifact]-[revision].[ext]" conf="runtime" />
 
@@ -222,6 +222,6 @@
 		<delete dir="${target.dir}" />
 	</target>
 
-	<target name="main" depends="package,sonar" />
+	<target name="main" depends="package" />
 
 </project>
