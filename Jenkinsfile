@@ -25,12 +25,6 @@ pipeline {
                 
                 
              }
-       stage('Test report'){
-          steps{
-             echo 'Test Report Taking'
-               cucumber fileIncludePattern: "**/*.json".sortingMethod:'ALPHABETICAL'
-          }
-   }
              
              stage("SonarQube Analysis")
              {
